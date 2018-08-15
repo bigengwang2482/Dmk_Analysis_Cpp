@@ -1,23 +1,17 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <string>
 #include "config.h"
+#include "meson.h"
 int main()
 {
 	std::vector<double> pion;
-	std::ifstream in("../traj_2840_pion_1e-4.txt",std::ios::in);
 	std::vector<std::string> config;
 	std::string list_path="list.txt";
-	config=list_config( config, list_path);	
-	double temp;
-	while (in >> temp)
-	{
-		pion.push_back(temp);
-	}
-	
-	in.close();
-
-
+	std::string path_pion="../traj_2840_pion_1e-4.txt";
+	list_config( config, list_path);	
+	meson_in(pion, path_pion);	 
 	//Display
 	std::cout << "The vector pion contents: " << std::endl;
 	for (auto i=pion.begin(); i!= pion.end() ; ++i)

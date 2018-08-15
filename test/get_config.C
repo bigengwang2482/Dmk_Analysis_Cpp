@@ -4,7 +4,7 @@
 #include <string>
 #include "config.h"
 
-std::vector<std::string> list_config( std::vector<std::string> &list, std::string path)
+void list_config( std::vector<std::string> &list, std::string path)
 {
 	std::ifstream in(path, std::ios::in);
 
@@ -14,8 +14,6 @@ std::vector<std::string> list_config( std::vector<std::string> &list, std::strin
 		list.push_back(temp_str);
 
 	in.close();
-
-	return list;
 
 }
 	
